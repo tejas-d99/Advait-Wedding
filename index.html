@@ -11,43 +11,98 @@
       font-family: 'Roboto', sans-serif;
       background-color: #fffaf0;
       color: #333;
+      scroll-behavior: smooth;
     }
     header {
       background-color: #b5838d;
       color: white;
       text-align: center;
-      padding: 2rem 1rem;
+      padding: 3rem 1rem;
+      position: relative;
+      z-index: 1;
     }
     header h1 {
       font-family: 'Great Vibes', cursive;
-      font-size: 3rem;
+      font-size: 3.5rem;
       margin: 0;
+      animation: fadeIn 1.5s ease-out;
     }
     .countdown {
       font-size: 1.5rem;
       margin-top: 0.5rem;
+      animation: fadeInPulse 1s ease-out;
+      text-shadow: 1px 1px 2px #00000033;
+      color: #fff0f5;
+      background: #6a4c93;
+      padding: 1rem;
+      border-radius: 1rem;
+      display: inline-block;
+      transition: transform 0.3s ease;
+    }
+    @keyframes fadeIn {
+      0% { opacity: 0; transform: translateY(20px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeInPulse {
+      0% { opacity: 0; transform: scale(0.95); }
+      50% { opacity: 1; transform: scale(1.02); }
+      100% { opacity: 1; transform: scale(1); }
     }
     section {
-      padding: 2rem;
-      max-width: 800px;
+      padding: 3rem 2rem;
+      max-width: 900px;
       margin: auto;
+      animation: fadeInSection 1s ease-out;
+    }
+    @keyframes fadeInSection {
+      0% { opacity: 0; transform: translateY(40px); }
+      100% { opacity: 1; transform: translateY(0); }
     }
     h2 {
       color: #6a4c93;
       border-bottom: 2px solid #b5838d;
       padding-bottom: 0.5rem;
+      margin-bottom: 1.5rem;
+      font-size: 2rem;
     }
     .schedule, .guestlist {
       list-style: none;
       padding-left: 0;
+      margin-left: 2rem;
     }
     .schedule li, .guestlist li {
-      margin-bottom: 0.5rem;
+      margin-bottom: 1rem;
+      transition: transform 0.3s ease;
+    }
+    .schedule li:hover, .guestlist li:hover {
+      transform: translateX(10px);
+      color: #b5838d;
     }
     iframe {
       width: 100%;
       height: 300px;
       border: none;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    footer {
+      background-color: #b5838d;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      font-size: 1.1rem;
+    }
+    .navigation {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background-color: #b5838d;
+      padding: 10px 20px;
+      border-radius: 5px;
+      color: white;
+      font-size: 1.2rem;
+      cursor: pointer;
+      z-index: 10;
     }
   </style>
 </head>
@@ -57,39 +112,46 @@
     <div class="countdown" id="countdown"></div>
   </header>
 
-  <section>
+  <div class="navigation" onclick="scrollToSection('schedule')">Go to Schedule</div>
+
+  <section id="bride-groom">
     <h2>Bride & Groom</h2>
     <p>Introducing our lovely couple. Their journey together has just begun, and this special day marks the beginning of forever.</p>
   </section>
 
-  <section>
+  <section id="schedule">
     <h2>Event Schedule</h2>
     <ul class="schedule">
-      <li><strong>Sangeet:</strong> 10th Dec 2025</li>
-      <li><strong>Haldi:</strong> 11th Dec 2025</li>
-      <li><strong>Reception:</strong> 12th Dec 2025</li>
+      <li><strong>Grah Yadna:</strong> 12th Nov 2025</li>
+      <li><strong>Mehendi:</strong> 13th Nov 2025</li>
+      <li><strong>Haldi:</strong> 14th Nov 2025</li>
+      <li><strong>Engagement:</strong> 14th Nov 2025</li>
+      <li><strong>Sangeet:</strong> 14th Nov 2025</li>
+      <li><strong>Wedding:</strong> 15th Nov 2025</li>
+      <li><strong>Reception:</strong> 15th Nov 2025</li>
     </ul>
   </section>
 
-  <section>
+  <section id="guestlist">
     <h2>Guest List</h2>
     <ul class="guestlist">
-      <li>Rahul Sharma</li>
-      <li>Neha Verma</li>
-      <li>Amit Patil</li>
-      <li>Sneha Kulkarni</li>
+      <li>Bhagwat Family</li>
     </ul>
   </section>
 
-  <section>
+  <section id="venue">
     <h2>Venue Details</h2>
     <p>Nakhrali Dhani Resort & Marriage Garden,<br>Rau Road, Nakhrali Dhani Bypass,<br>Opp. Railway Crossing, Indore, Madhya Pradesh 453331</p>
     <iframe src="https://www.google.com/maps?q=Nakhrali%20Dhani%20Resort%20%26%20Marriage%20Garden,%20Rau%20Road,%20Nakhrali%20Dhani%20Bypass,%20Opp.%20Railway%20Crossing,%20Indore,%20Madhya%20Pradesh%20453331&output=embed"></iframe>
   </section>
 
+  <footer>
+    <p>&copy; 2025 Advait's Wedding. All Rights Reserved.</p>
+  </footer>
+
   <script>
     const countdown = () => {
-      const eventDate = new Date('2025-12-12T00:00:00').getTime();
+      const eventDate = new Date('2025-11-12T00:00:00').getTime();
       const now = new Date().getTime();
       const gap = eventDate - now;
 
@@ -107,6 +169,10 @@
     };
     setInterval(countdown, 1000);
     countdown();
+
+    function scrollToSection(sectionId) {
+      document.getElementById(sectionId).scrollIntoView({ behavior: 'smooth' });
+    }
   </script>
 </body>
 </html>
