@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Wedding of [Bride & Groom]</title>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Roboto&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+      background-color: #fffaf0;
+      color: #333;
+    }
+    header {
+      background-color: #b5838d;
+      color: white;
+      text-align: center;
+      padding: 2rem 1rem;
+    }
+    header h1 {
+      font-family: 'Great Vibes', cursive;
+      font-size: 3rem;
+      margin: 0;
+    }
+    .countdown {
+      font-size: 1.5rem;
+      margin-top: 0.5rem;
+    }
+    section {
+      padding: 2rem;
+      max-width: 800px;
+      margin: auto;
+    }
+    h2 {
+      color: #6a4c93;
+      border-bottom: 2px solid #b5838d;
+      padding-bottom: 0.5rem;
+    }
+    .schedule, .guestlist {
+      list-style: none;
+      padding-left: 0;
+    }
+    .schedule li, .guestlist li {
+      margin-bottom: 0.5rem;
+    }
+    iframe {
+      width: 100%;
+      height: 300px;
+      border: none;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Tejas's Brother's Wedding</h1>
+    <div class="countdown" id="countdown"></div>
+  </header>
+
+  <section>
+    <h2>Bride & Groom</h2>
+    <p>Introducing our lovely couple. Their journey together has just begun, and this special day marks the beginning of forever.</p>
+  </section>
+
+  <section>
+    <h2>Event Schedule</h2>
+    <ul class="schedule">
+      <li><strong>Sangeet:</strong> 10th Dec 2025</li>
+      <li><strong>Haldi:</strong> 11th Dec 2025</li>
+      <li><strong>Reception:</strong> 12th Dec 2025</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Guest List</h2>
+    <ul class="guestlist">
+      <li>Rahul Sharma</li>
+      <li>Neha Verma</li>
+      <li>Amit Patil</li>
+      <li>Sneha Kulkarni</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Venue Details</h2>
+    <p>Nakhrali Dhani Resort & Marriage Garden,<br>Rau Road, Nakhrali Dhani Bypass,<br>Opp. Railway Crossing, Indore, Madhya Pradesh 453331</p>
+    <iframe src="https://www.google.com/maps?q=Nakhrali%20Dhani%20Resort%20%26%20Marriage%20Garden,%20Rau%20Road,%20Nakhrali%20Dhani%20Bypass,%20Opp.%20Railway%20Crossing,%20Indore,%20Madhya%20Pradesh%20453331&output=embed"></iframe>
+  </section>
+
+  <script>
+    const countdown = () => {
+      const eventDate = new Date('2025-12-12T00:00:00').getTime();
+      const now = new Date().getTime();
+      const gap = eventDate - now;
+
+      const second = 1000;
+      const minute = second * 60;
+      const hour = minute * 60;
+      const day = hour * 24;
+
+      const d = Math.floor(gap / day);
+      const h = Math.floor((gap % day) / hour);
+      const m = Math.floor((gap % hour) / minute);
+      const s = Math.floor((gap % minute) / second);
+
+      document.getElementById('countdown').innerText = `Countdown to the big day: ${d}d ${h}h ${m}m ${s}s`;
+    };
+    setInterval(countdown, 1000);
+    countdown();
+  </script>
+</body>
+</html>
