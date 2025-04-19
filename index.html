@@ -4,119 +4,315 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Wedding of Advait & Nidhi</title>
-  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
-    body {
+    * {
       margin: 0;
-      font-family: 'Roboto', sans-serif;
-      background-color: #fffaf0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #fef7f0;
       color: #333;
       scroll-behavior: smooth;
+      overflow-x: hidden;
     }
-    header {
-      background-color: #b5838d;
+
+    /* Navigation */
+    .nav-bar {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(181, 131, 141, 0.9);
+      backdrop-filter: blur(10px);
+      padding: 1rem 2rem;
+      z-index: 1000;
+      transition: all 0.3s ease;
+    }
+
+    .nav-bar ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+    }
+
+    .nav-bar a {
       color: white;
+      text-decoration: none;
+      font-weight: 400;
+      font-size: 1.1rem;
+      transition: color 0.3s ease;
+    }
+
+    .nav-bar a:hover {
+      color: #ffcad4;
+    }
+
+    /* Hero Section */
+    .hero {
+      height: 100vh;
+      background: linear-gradient(to bottom, #f8e1e9, #b5838d);
+      display: flex;
+      align-items: center;
+      justify-content: center;
       text-align: center;
-      padding: 3rem 1rem;
+      color: #333;
+      position: relative;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('https://www.transparenttextures.com/patterns/floral-pattern.png') repeat;
+      opacity: 0.2;
+      z-index: 0;
+    }
+
+    .hero-content {
       position: relative;
       z-index: 1;
+      padding: 2rem;
     }
-    header h1 {
-      font-family: 'Great Vibes', cursive;
-      font-size: 3.5rem;
-      margin: 0;
-      animation: fadeIn 1.5s ease-out;
+
+    .hero h1 {
+      font-family: 'Dancing Script', cursive;
+      font-size: 5.5rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      animation: fadeIn 2s ease-out;
+      text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.7);
     }
+
     .countdown {
-      font-size: 1.5rem;
-      margin-top: 0.5rem;
-      animation: fadeInPulse 1s ease-out;
-      text-shadow: 1px 1px 2px #00000033;
-      color: #fff0f5;
+      font-size: 1.3rem;
+      color: #ffffff;
       background: #6a4c93;
-      padding: 1rem;
-      border-radius: 1rem;
+      padding: 0.8rem 1.5rem;
+      border-radius: 50px;
       display: inline-block;
-      transition: transform 0.3s ease;
+      animation: fadeInPulse 1.5s ease-out;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+      white-space: nowrap;
     }
+
+    /* Animations */
     @keyframes fadeIn {
-      0% { opacity: 0; transform: translateY(20px); }
+      0% { opacity: 0; transform: translateY(30px); }
       100% { opacity: 1; transform: translateY(0); }
     }
+
     @keyframes fadeInPulse {
-      0% { opacity: 0; transform: scale(0.95); }
-      50% { opacity: 1; transform: scale(1.02); }
+      0% { opacity: 0; transform: scale(0.9); }
+      50% { transform: scale(1.05); }
       100% { opacity: 1; transform: scale(1); }
     }
+
     section {
-      padding: 3rem 2rem;
-      max-width: 900px;
+      padding: 5rem 2rem;
+      max-width: 1000px;
       margin: auto;
       animation: fadeInSection 1s ease-out;
     }
+
     @keyframes fadeInSection {
-      0% { opacity: 0; transform: translateY(40px); }
+      0% { opacity: 0; transform: translateY(50px); }
       100% { opacity: 1; transform: translateY(0); }
     }
+
     h2 {
       color: #6a4c93;
-      border-bottom: 2px solid #b5838d;
-      padding-bottom: 0.5rem;
+      font-size: 2.5rem;
       margin-bottom: 1.5rem;
-      font-size: 2rem;
+      text-align: center;
+      position: relative;
     }
+
+    h2::after {
+      content: '';
+      width: 100px;
+      height: 3px;
+      background: #b5838d;
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
     .schedule, .guestlist {
       list-style: none;
-      padding-left: 0;
-      margin-left: 2rem;
+      padding: 0;
+      display: grid;
+      gap: 1rem;
     }
+
     .schedule li, .guestlist li {
-      margin-bottom: 1rem;
-      transition: transform 0.3s ease;
+      background: #fff;
+      padding: 1rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
+
     .schedule li:hover, .guestlist li:hover {
-      transform: translateX(10px);
+      transform: translateY(-5px);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
       color: #b5838d;
     }
+
+    .rsvp-form {
+      background: #fff;
+      padding: 2rem;
+      border-radius: 8px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      max-width: 500px;
+      margin: 2rem auto;
+    }
+
+    .rsvp-form input, .rsvp-form select {
+      width: 100%;
+      padding: 0.8rem;
+      margin: 0.5rem 0;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      font-size: 1rem;
+    }
+
+    .rsvp-form button {
+      background: #b5838d;
+      color: white;
+      border: none;
+      padding: 1rem;
+      width: 100%;
+      border-radius: 5px;
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .rsvp-form button:hover {
+      background: #6a4c93;
+    }
+
     iframe {
       width: 100%;
-      height: 300px;
+      height: 400px;
       border: none;
       border-radius: 8px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     }
+
     footer {
-      background-color: #b5838d;
+      background: #b5838d;
       color: white;
       text-align: center;
-      padding: 1rem;
-      font-size: 1.1rem;
+      padding: 2rem;
+      font-size: 1rem;
     }
-    .navigation {
-      position: fixed;
-      top: 20px;
-      right: 20px;
-      background-color: #b5838d;
-      padding: 10px 20px;
-      border-radius: 5px;
-      color: white;
-      font-size: 1.2rem;
-      cursor: pointer;
-      z-index: 10;
+
+    footer a {
+      color: #ffcad4;
+      text-decoration: none;
     }
+
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 3.5rem;
+      }
+
+      .countdown {
+        font-size: 1rem;
+        padding: 0.6rem 1.2rem;
+      }
+
+      .nav-bar ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+      }
+
+      section {
+        padding: 3rem 1rem;
+      }
+
+      .gallery img {
+        height: 150px;
+      }
+    }
+    
+    /* Popup styling */
+  .popup {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    left: 0; top: 0;
+    width: 100%; height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+  }
+
+  .popup-content {
+    background-color: #fff;
+    margin: 20% auto;
+    padding: 20px;
+    width: 300px;
+    text-align: center;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  }
+
+  .popup-content button {
+    margin-top: 10px;
+    padding: 8px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+
+  .popup-content button:hover {
+    background-color: #45a049;
+  }
+    
   </style>
 </head>
 <body>
-  <header>
-    <h1>Advait & Nidhi's Wedding</h1>
-    <div class="countdown" id="countdown"></div>
-  </header>
+  <!-- Navigation -->
+  <nav class="nav-bar">
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#bride-groom">Couple</a></li>
+      <li><a href="#schedule">Schedule</a></li>
+      <li><a href="#rsvp">RSVP</a></li>
+      <li><a href="#venue">Venue</a></li>
+    </ul>
+  </nav>
 
-  <section id="bride-groom">
-    <h2>Bride & Groom</h2>
-    <p>Introducing our lovely couple. Their journey together has just begun, and this special day marks the beginning of forever.</p>
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+    <div class="hero-content">
+      <h1>Advait & Nidhi</h1>
+      <div class="countdown" id="countdown"></div>
+    </div>
   </section>
 
+  <!-- Bride & Groom -->
+  <section id="bride-groom">
+    <h2>Meet the Couple</h2>
+    <p style="text-align: center; max-width: 600px; margin: auto;">
+      Advait and Nidhi's love story is a beautiful journey of companionship and joy. Their wedding marks the beginning of a new chapter filled with love and togetherness.
+    </p>
+  </section>
+
+  <!-- Schedule -->
   <section id="schedule">
     <h2>Event Schedule</h2>
     <ul class="schedule">
@@ -130,25 +326,46 @@
     </ul>
   </section>
 
-  <section id="guestlist">
-    <h2>Guest List</h2>
-    <ul class="guestlist">
-      <li>Bhagwat Family</li>
-    </ul>
+  <!-- RSVP -->
+  <section id="rsvp">
+  <h2>Join Us</h2>
+  <form class="rsvp-form" onsubmit="handleRSVP(event)">
+    <input type="text" id="name" placeholder="Your Name" required>
+    <select id="attending" required>
+      <option value="" disabled selected>Will you attend?</option>
+      <option value="yes">Yes, I'll be there!</option>
+      <option value="no">Sorry, can't make it</option>
+    </select>
+    <input type="number" id="guests" placeholder="Number of Guests" min="1" required>
+    <button type="submit">Send RSVP</button>
+  </form>
   </section>
+  
+  <!-- ✅ Popup Confirmation -->
+  <div id="rsvp-popup" class="popup">
+  <div class="popup-content">
+    <p>🎉 Your RSVP has been submitted successfully!</p>
+    <button onclick="closePopup()">OK</button>
+  </div>
+  </div>
 
+  <!-- Venue -->
   <section id="venue">
     <h2>Venue Details</h2>
-    <p>Nakhrali Dhani Resort & Marriage Garden,<br>Rau Road, Nakhrali Dhani Bypass,<br>Opp. Railway Crossing, Indore, Madhya Pradesh 453331</p>
-    <iframe src="https://www.google.com/maps?q=Nakhrali%20Dhani%20Resort%20%26%20Marriage%20Garden,%20Rau%20Road,%20Nakhrali%20Dhani%20Bypass,%20Opp.%20Railway%20Crossing,%20Indore,%20Madhya%20Pradesh%20453331&output=embed"></iframe>
+    <p style="text-align: center;">
+      Shrida Greens Lawns And Resort,<br>CAT Rd, RRCAT, Indore, Madhya Pradesh 452012
+    </p>
+    <iframe src="https://www.google.com/maps?q=Shrida%20Greens%20Lawns%20And%20Resort,%20CAT%20Rd,%20RRCAT,%20Indore,%20Madhya%20Pradesh%20452012&output=embed"></iframe>
   </section>
 
+  <!-- Footer -->
   <footer>
-    <p>&copy; 2025 Advait's Wedding. All Rights Reserved.</p>
+    <p>© 2025 Advait & Nidhi's Wedding. Crafted with <i class="fas fa-heart"></i> for our special day.</p>
   </footer>
 
   <script>
-    const countdown = () => {
+    // Countdown
+    function countdown() {
       const eventDate = new Date('2025-11-12T00:00:00').getTime();
       const now = new Date().getTime();
       const gap = eventDate - now;
@@ -163,14 +380,52 @@
       const m = Math.floor((gap % hour) / minute);
       const s = Math.floor((gap % minute) / second);
 
-      document.getElementById('countdown').innerText = `Countdown to the big day: ${d}d ${h}h ${m}m ${s}s`;
-    };
+      document.getElementById('countdown').innerText = `Countdown to the big day: ${d} Days ${h} Hours ${m} Minutes ${s} Seconds`;
+    }
     setInterval(countdown, 1000);
     countdown();
 
-    function scrollToSection(sectionId) {
-      document.getElementById(sectionId).scrollIntoView({ behavior: 'smooth' });
-    }
+    // RSVP
+    function handleRSVP(event) {
+    event.preventDefault();
+
+    const name = document.getElementById('name').value;
+    const attending = document.getElementById('attending').value;
+    const guests = document.getElementById('guests').value;
+
+    const data = {
+      name: name,
+      attendance: attending,
+      guests: guests
+    };
+
+    fetch('https://script.google.com/macros/s/AKfycbyp_1q0HoB1eGr4LzB07Ja47NOajpNWDgedK5i1u6d2R92xvsA3VHvhiAu23L6177NAPw/exec', {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(data)
+    })
+    .then(() => {
+      // Show popup and reset form
+      document.querySelector('.rsvp-form').reset();
+      document.getElementById('rsvp-popup').style.display = 'block';
+    })
+    .catch(error => {
+      console.error('Error submitting RSVP:', error);
+    });
+  }
+
+  function closePopup() {
+    document.getElementById('rsvp-popup').style.display = 'none';
+  }
+
+    // Sticky Nav
+    window.addEventListener('scroll', () => {
+      const nav = document.querySelector('.nav-bar');
+      nav.style.background = window.scrollY > 50 ? 'rgba(181, 131, 141, 1)' : 'rgba(181, 131, 141, 0.9)';
+    });
   </script>
 </body>
 </html>
