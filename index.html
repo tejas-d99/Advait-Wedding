@@ -12,54 +12,42 @@
       padding: 0;
       box-sizing: border-box;
     }
+    
+    /* Add or modify these in your <style> section */
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #fef7f0;
+  color: #333;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  margin: 0 auto;
+}
 
-    body {
-      font-family: 'Poppins', sans-serif;
-      background-color: #fef7f0;
-      color: #333;
-      scroll-behavior: smooth;
-      overflow-x: hidden;
-    }
-
-    /* Hero Section */
-    .hero {
-      height: 100vh;
-      background: linear-gradient(to bottom, #f8e1e9, #b5838d);
-      display: flex;
+.hero {
+      max-width: 100%;
+      height : relative;
       align-items: center;
-      justify-content: center;
-      text-align: center;
-      color: #333;
-      position: relative;
-    }
+      background: linear-gradient(to bottom, #f8e1e9, #b5838d);
+  justify-content: center;
+  text-align: center;
+  color: #333;
+}
 
-    .hero::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: url('https://www.transparenttextures.com/patterns/floral-pattern.png') repeat;
-      opacity: 0.2;
-      z-index: 0;
-    }
-
-    .hero-content {
+.hero h1 {
+  font-family: 'Dancing Script', cursive;
+  animation: fadeIn 2s ease-out;
+  font-size: clamp(2.5rem, 5vw, 5rem);
+  font-weight: 100;
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.7);
+}
+    
+.hero-content {
       position: relative;
       z-index: 1;
       padding: 2rem;
     }
-
-    .hero h1 {
-  font-family: 'Dancing Script', cursive;
-  font-size: 5vw; /* responsive font size */
-  font-weight: 100;
-  margin-bottom: 1rem;
-  animation: fadeIn 2s ease-out;
-  text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.7);
-}
-
+    
     .countdown {
   font-size: 1.3rem;
   color: #ffffff;
@@ -70,7 +58,6 @@
   animation: fadeInPulse 1.5s ease-out;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
-  white-space: nowrap;
   max-width: 100%;
   margin: auto;
 }
@@ -315,7 +302,7 @@
 
   <!-- Footer -->
   <footer>
-    <p>© 2025 Advait & Nidhi's Wedding. Crafted with <i class="fas fa-heart"></i> for our special day.</p>
+    <p>© 2025 Advait & Nidhi's Wedding. Crafted with <i class="fas fa-heart"></i> for their special day.</p>
   </footer>
 
   <script>
@@ -335,7 +322,7 @@
       const m = Math.floor((gap % hour) / minute);
       const s = Math.floor((gap % minute) / second);
 
-      document.getElementById('countdown').innerText = `Countdown to the big day: ${d} Days ${h} Hours ${m} Minutes ${s} Seconds`;
+      document.getElementById('countdown').innerText = `Countdown to the big day: ${d}d ${h}h ${m}m ${s}s`;
     }
     setInterval(countdown, 1000);
     countdown();
