@@ -12,7 +12,7 @@
       padding: 0;
       box-sizing: border-box;
     }
-    
+
     /* Add or modify these in your <style> section */
 body {
   font-family: 'Poppins', sans-serif;
@@ -41,13 +41,13 @@ body {
   margin-bottom: 1rem;
   text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.7);
 }
-    
+
 .hero-content {
       position: relative;
       z-index: 1;
       padding: 2rem;
     }
-    
+
     .countdown {
   font-size: 1.3rem;
   color: #ffffff;
@@ -199,7 +199,7 @@ body {
         height: 150px;
       }
     }
-    
+
     /* Popup styling */
   .popup {
     display: none;
@@ -234,7 +234,7 @@ body {
   .popup-content button:hover {
     background-color: #45a049;
   }
-    
+
   </style>
 </head>
 <body>
@@ -269,10 +269,12 @@ body {
   </section>
 
   <!-- RSVP -->
-  <section id="rsvp">
+  <!-- RSVP -->
+<section id="rsvp">
   <h2>Join Us</h2>
   <form class="rsvp-form" onsubmit="handleRSVP(event)">
     <input type="text" id="name" placeholder="Your Name" required>
+    <input type="tel" id="phone" placeholder="Phone Number" maxlength="10" required>
     <select id="attending" required>
       <option value="" disabled selected>Will you attend?</option>
       <option value="yes">Yes, I'll be there!</option>
@@ -281,8 +283,8 @@ body {
     <input type="number" id="guests" placeholder="Number of Guests" min="1" required>
     <button type="submit">Send RSVP</button>
   </form>
-  </section>
-  
+</section>
+
   <!-- ✅ Popup Confirmation -->
   <div id="rsvp-popup" class="popup">
   <div class="popup-content">
@@ -329,35 +331,44 @@ body {
 
     // RSVP
     function handleRSVP(event) {
-    event.preventDefault();
+  event.preventDefault();
 
-    const name = document.getElementById('name').value;
-    const attending = document.getElementById('attending').value;
-    const guests = document.getElementById('guests').value;
+  const name = document.getElementById('name').value.trim();
+  const phone = document.getElementById('phone').value.trim();
+  const attending = document.getElementById('attending').value;
+  const guests = document.getElementById('guests').value;
 
-    const data = {
-      name: name,
-      attendance: attending,
-      guests: guests
-    };
-
-    fetch('https://script.google.com/macros/s/AKfycbyp_1q0HoB1eGr4LzB07Ja47NOajpNWDgedK5i1u6d2R92xvsA3VHvhiAu23L6177NAPw/exec', {
-      method: 'POST',
-      mode: 'no-cors',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(data)
-    })
-    .then(() => {
-      // Show popup and reset form
-      document.querySelector('.rsvp-form').reset();
-      document.getElementById('rsvp-popup').style.display = 'block';
-    })
-    .catch(error => {
-      console.error('Error submitting RSVP:', error);
-    });
+  // Phone number validation
+  const phoneRegex = /^[6-9]\d{9}$/;
+  if (!phoneRegex.test(phone)) {
+    alert("Please enter a valid 10-digit phone number.");
+    return;
   }
+
+  const data = {
+    name: name,
+    phone: phone,
+    attendance: attending,
+    guests: guests
+  };
+
+  fetch('https://script.google.com/macros/s/AKfycbyp_1q0HoB1eGr4LzB07Ja47NOajpNWDgedK5i1u6d2R92xvsA3VHvhiAu23L6177NAPw/exec', {
+    method: 'POST',
+    mode: 'no-cors',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(data)
+  })
+  .then(() => {
+    document.querySelector('.rsvp-form').reset();
+    document.getElementById('rsvp-popup').style.display = 'block';
+  })
+  .catch(error => {
+    console.error('Error submitting RSVP:', error);
+  });
+}
+
 
   function closePopup() {
     document.getElementById('rsvp-popup').style.display = 'none';
