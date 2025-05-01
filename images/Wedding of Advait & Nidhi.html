@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<!-- saved from url=(0014)about:internet -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wedding of Advait &amp; Nidhi</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com/">
+<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+<link href="./Wedding of Advait &amp; Nidhi_files/css2" rel="stylesheet">
+  <link rel="stylesheet" href="./Wedding of Advait &amp; Nidhi_files/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    /* Add or modify these in your <style> section */
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #fef7f0;
+  color: #333;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  margin: 0 auto;
+}
+
+.hero {
+      max-width: 100%;
+      height : 1080px;
+      align-items: center;
+      /* background: linear-gradient(to bottom, white, black); */
+      background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/background_header.jpg');
+      background-size: cover;
+      padding: 150px;
+  justify-content: center;
+  text-align: center;
+  /* color: #333; */
+}
+
+.hero h1 {
+  font-family: 'Pattaya', sans-serif;
+  animation: fadeIn 2s ease-out;
+  /* font-size: clamp(2.5rem, 5vw, 5rem); */
+  font-size: 145px;
+  line-height: 120%;
+    color: white;
+  font-weight: 400;
+  width: fit-content;
+  height: fit-content;
+  /* margin-bottom: 1rem; */
+  /* text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.7); */
+}
+    
+.hero-content {
+      position: relative;
+      z-index: 1;
+      padding: 2rem;
+    }
+    
+    .countdown {
+  font-size: 1.3rem;
+  color: #ffffff;
+  background: #6a4c93;
+  padding: 0.8rem 1.5rem;
+  border-radius: 50px;
+  display: inline-block;
+  animation: fadeInPulse 1.5s ease-out;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+  max-width: 100%;
+  margin: auto;
+}
+
+    /* Animations */
+    @keyframes fadeIn {
+      0% { opacity: 0; transform: translateY(30px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeInPulse {
+      0% { opacity: 0; transform: scale(0.9); }
+      50% { transform: scale(1.05); }
+      100% { opacity: 1; transform: scale(1); }
+    }
+
+    section {
+      padding: 5rem 2rem;
+      max-width: 1000px;
+      margin: auto;
+      animation: fadeInSection 1s ease-out;
+    }
+
+    @keyframes fadeInSection {
+      0% { opacity: 0; transform: translateY(50px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    h2 {
+      color: #6a4c93;
+      font-size: 2.5rem;
+      margin-bottom: 1.5rem;
+      text-align: center;
+      position: relative;
+    }
+
+    h2::after {
+      content: '';
+      width: 100px;
+      height: 3px;
+      background: #b5838d;
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .schedule, .guestlist {
+      list-style: none;
+      padding: 0;
+      display: grid;
+      gap: 1rem;
+    }
+
+    .schedule li, .guestlist li {
+      background: #fff;
+      padding: 1rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .schedule li:hover, .guestlist li:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      color: #b5838d;
+    }
+
+    .rsvp-form {
+      background: #fff;
+      padding: 2rem;
+      border-radius: 8px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      max-width: 500px;
+      margin: 2rem auto;
+    }
+
+    .rsvp-form input, .rsvp-form select {
+      width: 100%;
+      padding: 0.8rem;
+      margin: 0.5rem 0;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      font-size: 1rem;
+    }
+
+    .rsvp-form button {
+      background: #b5838d;
+      color: white;
+      border: none;
+      padding: 1rem;
+      width: 100%;
+      border-radius: 5px;
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .rsvp-form button:hover {
+      background: #6a4c93;
+    }
+
+    iframe {
+      width: 100%;
+      height: 400px;
+      border: none;
+      border-radius: 8px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    footer {
+      background: #b5838d;
+      color: white;
+      text-align: center;
+      padding: 2rem;
+      font-size: 1rem;
+    }
+
+    footer a {
+      color: #ffcad4;
+      text-decoration: none;
+    }
+
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 3.5rem;
+      }
+
+      .countdown {
+        font-size: 1rem;
+        padding: 0.6rem 1.2rem;
+      }
+
+      section {
+        padding: 3rem 1rem;
+      }
+
+      .gallery img {
+        height: 150px;
+      }
+    }
+    
+    /* Popup styling */
+  .popup {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    left: 0; top: 0;
+    width: 100%; height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+  }
+
+  .popup-content {
+  background-color: #fff;
+  margin: 10% auto;
+  padding: 20px;
+  width: 90%;
+  max-width: 300px;
+  text-align: center;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+
+  .popup-content button {
+    margin-top: 10px;
+    padding: 8px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+
+  .popup-content button:hover {
+    background-color: #45a049;
+  }
+    
+  </style>
+</head>
+<body>
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+    <div class="hero-content">
+      <h1>Advait &amp; Nidhi</h1>
+      <h2>- New chapter together</h2>
+      <div class="countdown" id="countdown">Countdown to the big day: 198d 15h 9m 40s</div>
+    </div>
+  </section>
+
+  <!-- Bride & Groom -->
+  <section id="bride-groom">
+    <h2>Meet the Couple</h2>
+    <p style="text-align: center; max-width: 600px; margin: auto;">
+      Advait and Nidhi's love story is a beautiful journey of companionship and joy. Their wedding marks the beginning of a new chapter filled with love and togetherness.
+    </p>
+  </section>
+
+  <!-- Schedule -->
+  <section id="schedule">
+    <h2>Event Schedule</h2>
+    <ul class="schedule">
+      <li><strong>Grah Yadna:</strong> 12th Nov 2025</li>
+      <li><strong>Mehendi:</strong> 13th Nov 2025</li>
+      <li><strong>Haldi:</strong> 14th Nov 2025</li>
+      <li><strong>Engagement:</strong> 14th Nov 2025</li>
+      <li><strong>Sangeet:</strong> 14th Nov 2025</li>
+      <li><strong>Wedding:</strong> 15th Nov 2025</li>
+      <li><strong>Reception:</strong> 15th Nov 2025</li>
+    </ul>
+  </section>
+
+  <!-- RSVP -->
+  <!-- RSVP -->
+<section id="rsvp">
+  <h2>Join Us</h2>
+  <form class="rsvp-form" onsubmit="handleRSVP(event)">
+    <input type="text" id="name" placeholder="Your Name" required="">
+    <input type="tel" id="phone" placeholder="Phone Number" maxlength="10" required="">
+    <select id="attending" required="">
+      <option value="" disabled="" selected="">Will you attend?</option>
+      <option value="yes">Yes, I'll be there!</option>
+      <option value="no">Sorry, can't make it</option>
+    </select>
+    <input type="number" id="guests" placeholder="Number of Guests" min="1" required="">
+    <button type="submit">Send RSVP</button>
+  </form>
+</section>
+  
+  <!-- ✅ Popup Confirmation -->
+  <div id="rsvp-popup" class="popup">
+  <div class="popup-content">
+    <p>🎉 Your RSVP has been submitted successfully!</p>
+    <button onclick="closePopup()">OK</button>
+  </div>
+  </div>
+
+  <!-- Venue -->
+  <section id="venue">
+    <h2>Venue Details</h2>
+    <p style="text-align: center;">
+      Shrida Greens Lawns And Resort,<br>CAT Rd, RRCAT, Indore, Madhya Pradesh 452012
+    </p>
+    <iframe src="./Wedding of Advait &amp; Nidhi_files/maps.html"></iframe>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Advait &amp; Nidhi's Wedding. Crafted with <i class="fas fa-heart"></i> for their special day.</p>
+  </footer>
+
+  <script>
+    // Countdown
+    function countdown() {
+      const eventDate = new Date('2025-11-12T00:00:00').getTime();
+      const now = new Date().getTime();
+      const gap = eventDate - now;
+
+      const second = 1000;
+      const minute = second * 60;
+      const hour = minute * 60;
+      const day = hour * 24;
+
+      const d = Math.floor(gap / day);
+      const h = Math.floor((gap % day) / hour);
+      const m = Math.floor((gap % hour) / minute);
+      const s = Math.floor((gap % minute) / second);
+
+      document.getElementById('countdown').innerText = `Countdown to the big day: ${d}d ${h}h ${m}m ${s}s`;
+    }
+    setInterval(countdown, 1000);
+    countdown();
+
+    // RSVP
+    function handleRSVP(event) {
+  event.preventDefault();
+
+  const name = document.getElementById('name').value.trim();
+  const phone = document.getElementById('phone').value.trim();
+  const attending = document.getElementById('attending').value;
+  const guests = document.getElementById('guests').value;
+
+  // Phone number validation
+  const phoneRegex = /^[6-9]\d{9}$/;
+  if (!phoneRegex.test(phone)) {
+    alert("Please enter a valid 10-digit phone number.");
+    return;
+  }
+
+  const data = {
+    name: name,
+    phone: phone,
+    attendance: attending,
+    guests: guests
+  };
+
+  fetch('https://script.google.com/macros/s/AKfycbyI6Hft0A85CpE_uelQtWA2oKEIzIJF54GM6Yc6W1iRidc_ZwkEZO0TrNMlwiyO2Tm_/exec', {
+    method: 'POST',
+    mode: 'no-cors',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(data)
+  })
+  .then(() => {
+    document.querySelector('.rsvp-form').reset();
+    document.getElementById('rsvp-popup').style.display = 'block';
+  })
+  .catch(error => {
+    console.error('Error submitting RSVP:', error);
+  });
+}
+
+
+  function closePopup() {
+    document.getElementById('rsvp-popup').style.display = 'none';
+  }
+
+    // Sticky Nav
+    window.addEventListener('scroll', () => {
+      const nav = document.querySelector('.nav-bar');
+      nav.style.background = window.scrollY > 50 ? 'rgba(181, 131, 141, 1)' : 'rgba(181, 131, 141, 0.9)';
+    });
+  </script>
+
+
+</body></html>

@@ -4,8 +4,16 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Wedding of Advait & Nidhi</title>
-  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Pattaya&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Serif:ital,opsz,wght@0,8..144,100..900;1,8..144,100..900&display=swap" rel="stylesheet">
+<!-- <link href="https://fonts.googleapis.com/css2?family=Pattaya&display=swap" rel="stylesheet"> -->
+<!-- <link href="https://fonts.googleapis.com/css2?family=Pattaya&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet"> -->
+  
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<!-- AOS CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
   <style>
     * {
       margin: 0;
@@ -23,23 +31,48 @@ body {
   margin: 0 auto;
 }
 
+p{
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  line-height: 120%;
+}
+
 .hero {
       max-width: 100%;
-      height : relative;
+      height : 1080px;
       align-items: center;
-      background: linear-gradient(to bottom, #f8e1e9, #b5838d);
+      /* background: linear-gradient(to bottom, white, black); */
+      background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 1)), url('images/background_header.jpg');
+      background-size: cover;
+      padding: 150px;
   justify-content: center;
   text-align: center;
-  color: #333;
+  /* color: #333; */
 }
 
 .hero h1 {
-  font-family: 'Dancing Script', cursive;
+  font-family: 'Pattaya', sans-serif;
   animation: fadeIn 2s ease-out;
-  font-size: clamp(2.5rem, 5vw, 5rem);
+  /* font-size: clamp(2.5rem, 5vw, 5rem); */
+  font-size: 145px;
+  line-height: 120%;
+    color: white;
+  font-weight: 400;
+  width: fit-content;
+  height: fit-content;
+  /* margin-bottom: 1rem; */
+  /* text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.7); */
+}
+
+.hero h2{
+  font-family: "Poppins", sans-serif;
   font-weight: 100;
-  margin-bottom: 1rem;
-  text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.7);
+  size: 32px;
+  line-height: 120%;
+  animation: fadeIn 2s ease-out;
+  text-align: right;
+  color: white;
+  margin-top: 32px;
 }
     
 .hero-content {
@@ -48,8 +81,8 @@ body {
       padding: 2rem;
     }
     
-    .countdown {
-  font-size: 1.3rem;
+.countdown {
+  /* font-size: 1.3rem;
   color: #ffffff;
   background: #6a4c93;
   padding: 0.8rem 1.5rem;
@@ -59,7 +92,37 @@ body {
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
   max-width: 100%;
-  margin: auto;
+  margin-top: 20%; */
+  /* New */
+  /* margin-top: 30%;
+  color: white;
+  font-family: 'Poppins';
+  font-size: 50px;
+  line-height: 120%;
+  font-weight: 200; */
+  color: #ffffff;
+  font-family: 'Poppins', sans-serif;
+  font-size: 60px; /* Slightly larger for impact */
+  line-height: 1.2;
+  font-weight: 300; /* Slightly bolder for readability */
+  /* padding: 1rem 2rem; */
+  border-radius: 50px;
+  display: inline-block;
+  /* background: linear-gradient(135deg, #6a4c93, #8e63c7); Smooth gradient */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  animation: fadeInPulse 1.5s ease-out;
+  margin-top: 30%;
+  max-width: 100%;
+  white-space: nowrap;
+}
+
+#bride-groom{
+    background-color: rgb(0, 0, 0, 1);
+    /* background: linear-gradient(rgba(0, 0, 0, 1), rgb(56, 54, 33)); */
+    width: 100%;
+    padding: 100px 200px;
+    height: 1080px;
 }
 
     /* Animations */
@@ -76,7 +139,7 @@ body {
 
     section {
       padding: 5rem 2rem;
-      max-width: 1000px;
+      /* max-width: 1000px; */
       margin: auto;
       animation: fadeInSection 1s ease-out;
     }
@@ -87,14 +150,16 @@ body {
     }
 
     h2 {
-      color: #6a4c93;
+      color: white;
       font-size: 2.5rem;
       margin-bottom: 1.5rem;
       text-align: center;
       position: relative;
+      font-family: "Roboto Serif", serif;
+      font-weight: 600;
     }
 
-    h2::after {
+    /* h2::after {
       content: '';
       width: 100px;
       height: 3px;
@@ -103,7 +168,34 @@ body {
       bottom: -10px;
       left: 50%;
       transform: translateX(-50%);
+    } */
+
+    #schedule::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background-color: rgba(0, 0, 0, 0.7); /* Adjust as needed */
+      z-index: 0;
     }
+    #schedule > * {
+      position: relative;
+      z-index: 1;
+    }
+
+     #schedule{
+      position: relative;
+      /* background-image: url('images/background_joinus.jpg'), linear-gradient(to bottom, transparent 70%, black 100%); */
+      background: 
+        linear-gradient(to bottom, transparent 70%, black 100%), 
+        url('images/background_joinus.jpg');
+      background-size: cover;
+      background-position: center;
+      /* background-attachment: fixed; */
+     }
+
+     .schedule_div{
+      padding: 100px 200px;
+     }
 
     .schedule, .guestlist {
       list-style: none;
@@ -126,6 +218,82 @@ body {
       color: #b5838d;
     }
 
+    body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: #111;
+    color: #eee;
+  }
+  
+  .timeline {
+    position: relative;
+    max-width: 800px;
+    margin: 5rem auto;
+    padding: 0 1rem;
+  }
+  
+  .timeline-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: #00bcd4;
+  }
+  
+  .timeline-item {
+    position: relative;
+    margin-bottom: 3rem;
+    padding-left: 60px;
+    border-left: 3px solid #00bcd4;
+  }
+  
+  .timeline-icon {
+    position: absolute;
+    left: -18px;
+    top: 0;
+    width: 36px;
+    height: 36px;
+    background: #00bcd4;
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    transition: transform 0.3s ease;
+    box-shadow: 0 0 10px #00bcd4;
+  }
+  
+  .timeline-item:hover .timeline-icon {
+    transform: scale(1.2);
+  }
+  
+  .timeline-content {
+    background: #222;
+    padding: 1.2rem;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 188, 212, 0.2);
+    transition: background 0.3s;
+  }
+  
+  .timeline-content:hover {
+    background: #2a2a2a;
+  }
+  
+  .timeline-date {
+    font-size: 0.9rem;
+    color: #aaa;
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+  
+  #rsvp{
+    background-color: rgb(0, 0, 0, 1);
+  }
+
+  .rsvp_container{
+    padding: 100px 200px;
+  }
+
     .rsvp-form {
       background: #fff;
       padding: 2rem;
@@ -145,7 +313,8 @@ body {
     }
 
     .rsvp-form button {
-      background: #b5838d;
+      /* background: #b5838d; */
+      background: rgb(4, 76, 99);
       color: white;
       border: none;
       padding: 1rem;
@@ -158,6 +327,7 @@ body {
 
     .rsvp-form button:hover {
       background: #6a4c93;
+      /* background: #ffc107; */
     }
 
     iframe {
@@ -166,10 +336,12 @@ body {
       border: none;
       border-radius: 8px;
       box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      margin-top: 40px;
     }
 
     footer {
-      background: #b5838d;
+      /* background: #b5838d; */
+      background: rgb(4, 76, 99);
       color: white;
       text-align: center;
       padding: 2rem;
@@ -234,14 +406,71 @@ body {
   .popup-content button:hover {
     background-color: #45a049;
   }
-    
+   
+  #venue{
+    /* background-color: rgba(0, 0, 0, 1); */
+    background: linear-gradient(to bottom, rgba(0,0,0,1), rgb(4, 76, 99));
+  }
+
+  .venue_container{
+    padding: 100px 200px;
+  }
+
+  .slideshow-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  overflow: hidden;
+  width: 100%;
+  height: 496px;
+  margin-top: 100px;
+}
+
+.carousel {
+  display: flex;
+  gap: 10px;
+  transition: all 0.5s ease-in-out;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.carousel-img {
+  height: 100%;
+  /* width: 245px; */
+  width: 245px;
+  object-fit: cover;
+  opacity: 0.5;
+  transform: scale(1);
+  transition: width 0.5s ease, opacity 0.5s ease;
+  border-radius: 10px;
+}
+
+.carousel-img.active {
+  width: 400px;
+  opacity: 1;
+  z-index: 5;
+  border: 3px solid #ffc107;
+  /* border: 3px solid rgb(4, 76, 99); */
+}
+
+button.carousel-nav {
+  background-color: transparent;
+  color: white;
+  font-size: 2rem;
+  border: none;
+  cursor: pointer;
+  z-index: 10;
+}
   </style>
 </head>
 <body>
   <!-- Hero Section -->
   <section id="home" class="hero">
     <div class="hero-content">
-      <h1>Advait & Nidhi's Wedding</h1>
+      <h1>Advait & Nidhi</h1>
+      <h2>- New chapter together.</h2>
       <div class="countdown" id="countdown"></div>
     </div>
   </section>
@@ -249,40 +478,117 @@ body {
   <!-- Bride & Groom -->
   <section id="bride-groom">
     <h2>Meet the Couple</h2>
-    <p style="text-align: center; max-width: 600px; margin: auto;">
-      Advait and Nidhi's love story is a beautiful journey of companionship and joy. Their wedding marks the beginning of a new chapter filled with love and togetherness.
+    <p style="text-align: center; margin: auto; color: white;">
+      Advait and Nidhi's love story is a beautiful journey of companionship and joy.<br> Their wedding marks the beginning of a new chapter filled with love and togetherness.
     </p>
+    <div class="slideshow-container">
+      <button id="prevBtn" class="carousel-nav">&#10094;</button>
+      <div class="carousel" id="carousel">
+        <img src="images/image1.jpg" class="carousel-img" />
+        <img src="images/image2.jpg" class="carousel-img active" />
+        <img src="images/image3.jpg" class="carousel-img" />
+        <img src="images/image4.jpg" class="carousel-img" />
+        <img src="images/image5.jpg" class="carousel-img" />
+      </div>
+      <button id="nextBtn" class="carousel-nav">&#10095;</button>
+    </div>
   </section>
 
   <!-- Schedule -->
   <section id="schedule">
-    <h2>Event Schedule</h2>
-    <ul class="schedule">
-      <li><strong>Grah Yadna:</strong> 12th Nov 2025</li>
-      <li><strong>Mehendi:</strong> 13th Nov 2025</li>
-      <li><strong>Haldi:</strong> 14th Nov 2025</li>
-      <li><strong>Engagement:</strong> 14th Nov 2025</li>
-      <li><strong>Sangeet:</strong> 14th Nov 2025</li>
-      <li><strong>Wedding:</strong> 15th Nov 2025</li>
-      <li><strong>Reception:</strong> 15th Nov 2025</li>
-    </ul>
+    <div class="schedule_div">
+      <h2>Event Schedule</h2>
+      <!-- <ul class="schedule">
+        <li><strong>Grah Yadna:</strong> 12th Nov 2025</li>
+        <li><strong>Mehendi:</strong> 13th Nov 2025</li>
+        <li><strong>Haldi:</strong> 14th Nov 2025</li>
+        <li><strong>Engagement:</strong> 14th Nov 2025</li>
+        <li><strong>Sangeet:</strong> 14th Nov 2025</li>
+        <li><strong>Wedding:</strong> 15th Nov 2025</li>
+        <li><strong>Reception:</strong> 15th Nov 2025</li>
+      </ul> -->
+      <div class="timeline-item" data-aos="fade-right">
+        <div class="timeline-icon"><i class="fas fa-fire"></i></div>
+        <div class="timeline-content">
+          <span class="timeline-date">12th Nov 2025</span>
+          <h3>Grah Yadna</h3>
+          <p>A sacred fire ritual to begin the wedding festivities with blessings.</p>
+        </div>
+      </div>
+    
+      <div class="timeline-item" data-aos="fade-left" data-aos-delay="100">
+        <div class="timeline-icon"><i class="fas fa-leaf"></i></div>
+        <div class="timeline-content">
+          <span class="timeline-date">13th Nov 2025</span>
+          <h3>Mehendi</h3>
+          <p>Traditional henna ceremony with music, laughter, and love.</p>
+        </div>
+      </div>
+    
+      <div class="timeline-item" data-aos="fade-right" data-aos-delay="200">
+        <div class="timeline-icon"><i class="fas fa-sun"></i></div>
+        <div class="timeline-content">
+          <span class="timeline-date">14th Nov 2025</span>
+          <h3>Haldi</h3>
+          <p>Celebration of joy and turmeric blessings for the couple’s glowing future.</p>
+        </div>
+      </div>
+    
+      <div class="timeline-item" data-aos="fade-left" data-aos-delay="300">
+        <div class="timeline-icon"><i class="fas fa-ring"></i></div>
+        <div class="timeline-content">
+          <span class="timeline-date">14th Nov 2025</span>
+          <h3>Engagement</h3>
+          <p>The official exchange of rings and promises before family and friends.</p>
+        </div>
+      </div>
+    
+      <div class="timeline-item" data-aos="fade-right" data-aos-delay="400">
+        <div class="timeline-icon"><i class="fas fa-music"></i></div>
+        <div class="timeline-content">
+          <span class="timeline-date">14th Nov 2025</span>
+          <h3>Sangeet</h3>
+          <p>A night of music and dance where families come together in celebration.</p>
+        </div>
+      </div>
+    
+      <div class="timeline-item" data-aos="fade-left" data-aos-delay="500">
+        <div class="timeline-icon"><i class="fas fa-heart"></i></div>
+        <div class="timeline-content">
+          <span class="timeline-date">15th Nov 2025</span>
+          <h3>Wedding</h3>
+          <p>The grand ceremony where two souls unite in eternal love and tradition.</p>
+        </div>
+      </div>
+    
+      <div class="timeline-item" data-aos="fade-right" data-aos-delay="600">
+        <div class="timeline-icon"><i class="fas fa-glass-cheers"></i></div>
+        <div class="timeline-content">
+          <span class="timeline-date">15th Nov 2025</span>
+          <h3>Reception</h3>
+          <p>A glamorous evening of joy, food, and celebration with all our loved ones.</p>
+        </div>
+      </div>
+    </div>
   </section>
 
   <!-- RSVP -->
   <!-- RSVP -->
 <section id="rsvp">
-  <h2>Join Us</h2>
-  <form class="rsvp-form" onsubmit="handleRSVP(event)">
-    <input type="text" id="name" placeholder="Your Name" required>
-    <input type="tel" id="phone" placeholder="Phone Number" maxlength="10" required>
-    <select id="attending" required>
-      <option value="" disabled selected>Will you attend?</option>
-      <option value="yes">Yes, I'll be there!</option>
-      <option value="no">Sorry, can't make it</option>
-    </select>
-    <input type="number" id="guests" placeholder="Number of Guests" min="1" required>
-    <button type="submit">Send RSVP</button>
-  </form>
+  <div class="rsvp_container">
+    <h2>Join Us</h2>
+    <form class="rsvp-form" onsubmit="handleRSVP(event)">
+      <input type="text" id="name" placeholder="Your Name" required>
+      <input type="tel" id="phone" placeholder="Phone Number" maxlength="10" required>
+      <select id="attending" required>
+        <option value="" disabled selected>Will you attend?</option>
+        <option value="yes">Yes, I'll be there!</option>
+        <option value="no">Sorry, can't make it</option>
+      </select>
+      <input type="number" id="guests" placeholder="Number of Guests" min="1" required>
+      <button type="submit">Send RSVP</button>
+    </form>
+  </div>
 </section>
   
   <!-- ✅ Popup Confirmation -->
@@ -295,11 +601,13 @@ body {
 
   <!-- Venue -->
   <section id="venue">
-    <h2>Venue Details</h2>
-    <p style="text-align: center;">
+    <div class="venue_container">
+      <h2>Venue Details</h2>
+    <p style="text-align: center; margin-top: 20px;">
       Shrida Greens Lawns And Resort,<br>CAT Rd, RRCAT, Indore, Madhya Pradesh 452012
     </p>
     <iframe src="https://www.google.com/maps?q=Shrida%20Greens%20Lawns%20And%20Resort,%20CAT%20Rd,%20RRCAT,%20Indore,%20Madhya%20Pradesh%20452012&output=embed"></iframe>
+    </div>  
   </section>
 
   <!-- Footer -->
@@ -307,6 +615,7 @@ body {
     <p>© 2025 Advait & Nidhi's Wedding. Crafted with <i class="fas fa-heart"></i> for their special day.</p>
   </footer>
 
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
   <script>
     // Countdown
     function countdown() {
@@ -324,7 +633,7 @@ body {
       const m = Math.floor((gap % hour) / minute);
       const s = Math.floor((gap % minute) / second);
 
-      document.getElementById('countdown').innerText = `Countdown to the big day: ${d}d ${h}h ${m}m ${s}s`;
+      document.getElementById('countdown').innerHTML = `${d} Days&nbsp&nbsp&nbsp&nbsp${h} Hrs&nbsp&nbsp&nbsp&nbsp${m} Mins&nbsp&nbsp&nbsp&nbsp${s} Sec`;
     }
     setInterval(countdown, 1000);
     countdown();
@@ -379,6 +688,49 @@ body {
       const nav = document.querySelector('.nav-bar');
       nav.style.background = window.scrollY > 50 ? 'rgba(181, 131, 141, 1)' : 'rgba(181, 131, 141, 0.9)';
     });
+
+    const carousel = document.getElementById('carousel');
+const nextBtn = document.getElementById('nextBtn');
+const prevBtn = document.getElementById('prevBtn');
+
+function rotateForward() {
+  const first = carousel.children[0];
+  carousel.appendChild(first.cloneNode(true));
+  carousel.removeChild(first);
+  updateActive();
+}
+
+function rotateBackward() {
+  const last = carousel.children[carousel.children.length - 1];
+  carousel.insertBefore(last.cloneNode(true), carousel.children[0]);
+  carousel.removeChild(carousel.children[carousel.children.length - 1]);
+  updateActive();
+}
+
+function updateActive() {
+  const images = document.querySelectorAll('.carousel-img');
+  images.forEach(img => img.classList.remove('active'));
+  images[1].classList.add('active'); // Make the 2nd image active
+}
+
+nextBtn.addEventListener('click', () => {
+  rotateForward();
+  resetAutoplay();
+});
+
+prevBtn.addEventListener('click', () => {
+  rotateBackward();
+  resetAutoplay();
+});
+
+let autoplayInterval = setInterval(rotateForward, 3000);
+function resetAutoplay() {
+  clearInterval(autoplayInterval);
+  autoplayInterval = setInterval(rotateForward, 3000);
+}
+
+
+AOS.init({ duration: 1000 });
   </script>
 </body>
 </html>
